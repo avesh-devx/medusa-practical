@@ -20,6 +20,15 @@ export const createBrandStep = createStep(
     const brandModuleService: BrandModuleService =
       container.resolve(BRAND_MODULE); // get brand module service
 
+    // check if the brand already exists
+    const existingBrand = await brandModuleService.listBrands({
+      filters: { name: input.name },
+    });
+
+    if (existingBrand.length > 0) {
+      throw new Error("Brand with this name already exists");
+    }
+
     const brand = await brandModuleService.createBrands(input);
 
     //Send response
