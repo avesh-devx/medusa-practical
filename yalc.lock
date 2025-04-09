@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "@medusa/store-locator-plugin": {
+      "signature": "e5eafa2b387c14e64b984d3dd2cf7c19",
+      "file": true
+    }
+  }
+}
